@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Все мы родом из детства</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+.header-hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header-hero h1 {
+    font-size: 64px; /* крупнее на десктопе */
+    margin-bottom: 15px;
+}
+
+.header-hero p {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .header-hero h1 {
+        font-size: 38px; /* поменьше на мобильных */
+    }
+    .header-hero p {
+        font-size: 18px;
+    }
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 125%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.image-container img.adult {
+    opacity: 0;
+}
+
+.card-title {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<header class="header-hero">
+    <h1>Все мы родом из детства</h1>
+    <p>
+        Каждый великий человек когда-то был ребёнком.
+        От первых шагов — к следу в истории.
+    </p>
+</header>
+
+<section class="grid" id="grid"></section>
+
+<script>
+const people = [
+"Иван Константинович Айвазовский",
+"Иван Иванович Шишкин",
+"Иван Григорьевич Перов",
+"Выготский Лев Семенович",
+"Ушинский Константин Дмитриевич",
+"Сухомлинский Василий Александрович",
+"Мария Монтессори",
+"Макаренко Антон Семенович",
+"Николай Константинович Рерих",
+"Януш Корчак",
+"Сергей Васильевич Рахманинов",
+"Петр Ильич Чайковский",
+"Крупская Надежда Константиновна",
+"Ленин Владимир Ильич",
+"Гагарин Юрий Алексеевич",
+"Шацкий Станислав Теофилович",
+"Александра Николаевна Пахмутова",
+"Александр Сергеевич Пушкин",
+"Александр Исаевич Солженицын",
+"Сергей Александрович Есенин",
+"Николай Гаврилович Чернышевский",
+"Анатолий Васильевич Луначарский",
+"Герцен Александр Иванович"
+];
+
+people.forEach((name, index) => {
+    const childPhoto = `images/child${index+1}.jpg`;
+    const adultPhoto = `images/adult${index+1}.jpg`;
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+        <div class="image-container">
+            <img src="${childPhoto}" class="child" alt="Детское фото ${name}">
+            <img src="${adultPhoto}" class="adult" alt="Взрослое фото ${name}">
+        </div>
+        <div class="card-title">${name}</div>
+    `;
+    card.onclick = () => location.href = `person${index+1}.html`;
+
+    grid.appendChild(card);
+});
+
+
+const containers = document.querySelectorAll(".image-container");
+
+containers.forEach(container => {
+    const child = container.querySelector(".child");
+    const adult = container.querySelector(".adult");
+
+    // Десктоп — наведение
+    container.addEventListener("mouseenter", () => {
+        adult.style.opacity = 1;
+        child.style.opacity = 0;
+    });
+
+    container.addEventListener("mouseleave", () => {
+        adult.style.opacity = 0;
+        child.style.opacity = 1;
+    });
+
+    // Телефон — зажатие пальцем
+    container.addEventListener("touchstart", () => {
+        adult.style.opacity = 1;
+        child.style.opacity = 0;
+    });
+
+    container.addEventListener("touchend", () => {
+        adult.style.opacity = 0;
+        child.style.opacity = 1;
+    });
+
+    container.addEventListener("touchcancel", () => {
+        adult.style.opacity = 0;
+        child.style.opacity = 1;
+    });
+});
+
+
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show'); // убираем при уходе
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
