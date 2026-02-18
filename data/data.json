@@ -1,0 +1,224 @@
+[
+  {
+    "id": "pakhmutova",
+    "name": "Александра Николаевна Пахмутова",
+    "childImg": "images/child_pakhmutova.jpg",
+    "adultImg": "images/adult_pakhmutova.jpg",
+
+    "historicalInfo": "Александра Николаевна Пахмутова — выдающийся советский и российский композитор, пианистка и общественный деятель. Народная артистка СССР (1984), Герой Социалистического Труда (1990). Автор более 400 песен, ставших классикой, а также музыки к кинофильмам и симфонических произведений. Ее творчество во многом стало музыкальным отражением эпохи — времени комсомольских строек, освоения космоса и веры в дружбу народов.",
+
+    "facts": [
+      { "title": "Музыкальный вундеркинд", "fact": "Сочинять музыку Пахмутова начала в раннем детстве. Первую пьесу для фортепиано «Петухи поют» она написала в возрасте пяти лет." },
+      { "title": "Московская юность", "fact": "В 1943 году, в 14 лет, Александра самостоятельно приехала в Москву и поступила в Центральную музыкальную школу при консерватории. Позднее она с отличием окончила Московскую консерваторию и аспирантуру, утвердившись как профессиональный композитор." },
+      { "title": "Творческий союз длиною в жизнь", "fact": "В 1956 году на радио Пахмутова познакомилась с поэтом Николай Николаевич Добронравов. Их творческий и семейный союз стал одним из самых прочных в культурной среде. Многие известные песни были созданы именно в их соавторстве." },
+      { "title": "Связь с эпохой космоса", "fact": "Пахмутова была лично знакома с Юрий Алексеевич Гагарин. В память о первом космонавте она создала цикл песен «Созвездье Гагарина», тем самым увековечив его имя в музыке." },
+      { "title": "Любовь к спорту", "fact": "Александра Николаевна известна как преданная футбольная болельщица. Она поддерживает волгоградский клуб Ротор." },
+      { "title": "Независимая позиция", "fact": "Несмотря на большое количество патриотических произведений, Пахмутова никогда не состояла в КПСС. Этот факт нередко вызывает удивление, учитывая идеологическую окраску многих ее песен." },
+      { "title": "Отклик на события 1990-х", "fact": "В 1991 году была написана песня «Не с теми я, кто бросил землю» («Остаюсь с обманутым народом»). Произведение стало своеобразным художественным откликом на волну эмиграции начала 1990-х и перекликалось с одноименным стихотворением Анна Андреевна Ахматова." },
+      { "title": "Александра Николаевна сегодня", "fact": "Несмотря на почтенный возраст, Пахмутова сохраняет творческую активность и продолжает участвовать в культурной жизни страны." }
+    ],
+
+    "quotes": [
+      "«У нас такая страна — с высокой концентрацией дарований, где талантливые люди были, есть и обязательно будут…»",
+      "«Без культуры успеха не добиться»"
+    ]
+  },
+  {
+    "id": "aivazovsky",
+    "name": "Иван Константинович Айвазовский",
+    "childImg": "images/child_aivazovsky.jpg",
+    "adultImg": "images/adult_aivazovsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "shishkin",
+    "name": "Иван Иванович Шишкин",
+    "childImg": "images/child_shishkin.jpg",
+    "adultImg": "images/adult_shishkin.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "perov",
+    "name": "Иван Григорьевич Перов",
+    "childImg": "images/child_perov.jpg",
+    "adultImg": "images/adult_perov.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "vygotsky",
+    "name": "Выготский Лев Семенович",
+    "childImg": "images/child_vygotsky.jpg",
+    "adultImg": "images/adult_vygotsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "ushinsky",
+    "name": "Ушинский Константин Дмитриевич",
+    "childImg": "images/child_ushinsky.jpg",
+    "adultImg": "images/adult_ushinsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "sukhomlinsky",
+    "name": "Сухомлинский Василий Александрович",
+    "childImg": "images/child_sukhomlinsky.jpg",
+    "adultImg": "images/adult_sukhomlinsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "montessori",
+    "name": "Мария Монтессори",
+    "childImg": "images/child_montessori.jpg",
+    "adultImg": "images/adult_montessori.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "makarenko",
+    "name": "Макаренко Антон Семенович",
+    "childImg": "images/child_makarenko.jpg",
+    "adultImg": "images/adult_makarenko.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "rerikh",
+    "name": "Николай Константинович Рерих",
+    "childImg": "images/child_rerikh.jpg",
+    "adultImg": "images/adult_rerikh.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "korchak",
+    "name": "Януш Корчак",
+    "childImg": "images/child_korchak.jpg",
+    "adultImg": "images/adult_korchak.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "rakhmaninov",
+    "name": "Сергей Васильевич Рахманинов",
+    "childImg": "images/child_rakhmaninov.jpg",
+    "adultImg": "images/adult_rakhmaninov.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "tchaikovsky",
+    "name": "Петр Ильич Чайковский",
+    "childImg": "images/child_tchaikovsky.jpg",
+    "adultImg": "images/adult_tchaikovsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "krupskaya",
+    "name": "Крупская Надежда Константиновна",
+    "childImg": "images/child_krupskaya.jpg",
+    "adultImg": "images/adult_krupskaya.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "lenin",
+    "name": "Ленин Владимир Ильич",
+    "childImg": "images/child_lenin.jpg",
+    "adultImg": "images/adult_lenin.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "gagarin",
+    "name": "Гагарин Юрий Алексеевич",
+    "childImg": "images/child_gagarin.jpg",
+    "adultImg": "images/adult_gagarin.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "shatsky",
+    "name": "Шацкий Станислав Теофилович",
+    "childImg": "images/child_shatsky.jpg",
+    "adultImg": "images/adult_shatsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "pushkin",
+    "name": "Александр Сергеевич Пушкин",
+    "childImg": "images/child_pushkin.jpg",
+    "adultImg": "images/adult_pushkin.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "solzhenitsyn",
+    "name": "Александр Исаевич Солженицын",
+    "childImg": "images/child_solzhenitsyn.jpg",
+    "adultImg": "images/adult_solzhenitsyn.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "esenin",
+    "name": "Сергей Александрович Есенин",
+    "childImg": "images/child_esenin.jpg",
+    "adultImg": "images/adult_esenin.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "chernyshevsky",
+    "name": "Николай Гаврилович Чернышевский",
+    "childImg": "images/child_chernyshevsky.jpg",
+    "adultImg": "images/adult_chernyshevsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "lunacharsky",
+    "name": "Анатолий Васильевич Луначарский",
+    "childImg": "images/child_lunacharsky.jpg",
+    "adultImg": "images/adult_lunacharsky.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  },
+  {
+    "id": "herzen",
+    "name": "Герцен Александр Иванович",
+    "childImg": "images/child_herzen.jpg",
+    "adultImg": "images/adult_herzen.jpg",
+    "historicalInfo": "",
+    "facts": [],
+    "quotes": []
+  }
+]
