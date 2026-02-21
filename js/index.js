@@ -53,15 +53,16 @@ function createCard(person) {
   return card;
 }
 
-function initNameReveal(grid) {
+function initRevealAndAdult(grid) {
     grid.addEventListener('touchstart', (e) => {
         const container = e.target.closest('.image-container');
         if (!container) return;
 
-        // если это короткий тап — идём по ссылке
         container.pressTimer = setTimeout(() => {
-            container.classList.add('show-name'); // показываем ФИО
-        }, 600); // 600ms — стандартная длительность long press
+            container.classList.add('show-name');
+            container.querySelector('.adult').style.opacity = '1';
+            container.querySelector('.child').style.opacity = '0';
+        }, 600); // долгое нажатие ≥600мс
     });
 
     grid.addEventListener('touchend', (e) => {
@@ -70,10 +71,15 @@ function initNameReveal(grid) {
 
         clearTimeout(container.pressTimer);
 
-        // если класс show-name уже есть — убираем через короткое время
         if (container.classList.contains('show-name')) {
-            setTimeout(() => container.classList.remove('show-name'), 1500);
-            e.preventDefault(); // отменяем переход на другую страницу
+            // убираем через 1,5 секунды
+            setTimeout(() => {
+                container.classList.remove('show-name');
+                container.querySelector('.adult').style.opacity = '0';
+                container.querySelector('.child').style.opacity = '1';
+            }, 1500);
+
+            e.preventDefault(); // отменяем переход по ссылке на короткий тап
         }
     });
 }

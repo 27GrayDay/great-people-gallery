@@ -89,21 +89,19 @@ p {
 .image-container {
     position: relative;
     width: 100%;
-    padding-top: 125%;
+    aspect-ratio: 4/5;
     overflow: hidden;
     border-radius: 12px;
 }
 
 .image-container img {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     object-position: top;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .image-container img.adult {
@@ -142,7 +140,8 @@ p {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Десктоп */
+/* Десктоп hover */
+.image-container:hover .adult,
 .image-container:hover .card-title {
     opacity: 1;
     transform: translateY(0);
