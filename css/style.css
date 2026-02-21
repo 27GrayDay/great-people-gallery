@@ -1,112 +1,65 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     background: #f5f5f5;
     color: #222;
+    line-height: 1.7;
 }
 
-/* Hero-блок */
-.hero {
+h1, h2, h3 {
+    line-height: 1.1;
+    font-weight: 600;
+    color: #111;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #444;
+}
+
+.title {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    inset: 0;
     height: 100vh;
-    background: #e6e6e6;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: all .4s ease;
-    z-index: 10;
+    padding: 0 20px;
+    z-index: -1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.hero-content h1 {
+.title-content {
+    transition: transform 0.1s linear;
+    max-width: 800px;
+}
+
+.title-content h1 {
     font-size: 64px;
     margin-bottom: 20px;
-    padding: 0px 10px;
-    transition: all 0.4s ease;
 }
 
-.hero-content p {
+.title-content p {
     font-size: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0px 15px;
-    transition: opacity 0.3s ease, font-size 0.3s ease;
 }
 
-/* Состояние после скролла */
-.hero.shrink {
-    height: 80px;
-    align-items: flex-start;
-    padding-top: 10px;
-}
-
-.hero.shrink .hero-content h1 {
-    font-size: 32px;
-}
-
-.hero.shrink .hero-content p {
-    opacity: 0;
-}
-
-/* Сетка карточек */
 .grid {
-    margin: 90vh auto 0 auto;
+    margin: 100vh auto 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
     padding: 40px;
     max-width: 1400px;
-}
-
-/* Адаптив для планшетов */
-@media (max-width: 1024px) {
-    .hero.shrink .hero-content h1 {
-        font-size: 28px;
-    }
-    .grid {
-        padding: 30px;
-    }
-}
-
-/* Адаптив для телефонов */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 32px;
-    }
-    .hero-content p {
-        font-size: 18px;
-    }
-    .hero.shrink {
-        height: 60px;
-        padding-top: 5px;
-    }
-    .hero.shrink .hero-content h1 {
-        font-size: 24px;
-    }
-    .grid {
-        padding: 20px;
-        gap: 20px;
-    }
-}
-
-/* Маленькие экраны */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 26px;
-    }
-    .hero-content p {
-        font-size: 16px;
-    }
-    .hero.shrink .hero-content h1 {
-        font-size: 20px;
-    }
-    .grid {
-        gap: 15px;
-        padding: 15px;
-    }
+    z-index: 2;
 }
 
 .card {
@@ -114,12 +67,12 @@ body {
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.4s ease, 
-                opacity 0.5s ease, 
+    transition: transform 0.4s ease,
+                opacity 0.5s ease,
                 box-shadow 0.4s ease;
     opacity: 0;
     transform: translateY(30px) scale(0.95);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .card.show {
@@ -128,8 +81,9 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25),
+                0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .image-container {
@@ -156,153 +110,265 @@ body {
     opacity: 0;
 }
 
+.info-flex {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.image-container {
+    flex: 0 0 380px;
+    max-width: 380px;
+}
+
+.historical-text {
+    flex: 1;
+}
+
 .card-title {
-    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 12px;
     text-align: center;
-    font-weight: bold;
-    font-size: 18px;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Десктоп */
+.image-container:hover .card-title {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Person */
 
-header {
-    text-align: center;
-    padding: 40px 20px 10px;
-}
-
-header h1 {
-    font-size: 42px;
-    margin: 0;
-}
-
-.person-text {
-    flex: 1;
-    max-width: 700px;
-}
-
-.person-text h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
-    margin-top: 40px;
-    font-weight: 600;
-}
-
-.person-text p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #2b2b2b;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.person-text ul {
-    padding-left: 20px;
-    line-height: 1.7;
-}
-
-.person-text li {
-    margin-bottom: 12px;
-    font-size: 17px;
-}
-
 main {
-    letter-spacing: 0.2px;
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px 60px;
+    margin: 40px auto 40px;
+    padding: 0 20px;
 }
 
-.person-container {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-    margin-bottom: 60px;
-}
+/* Основные карточки */
 
-.person-container .image-container {
-    position: relative;
-    width: 350px;
-    padding-top: 40%;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    flex-shrink: 0;
-}
-
-.person-container .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;   /* сохраняет пропорции и обрезает лишнее */
-    object-position: top;
-    border-radius: 16px;
-}
-
-.person-container .image-container img.adult {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-.person-container .image-container:hover img.adult {
-    opacity: 1;
+.info-card,
+.facts-card,
+.quotes-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.06);
 }
 
 
+/* Контейнеры списков */
+
+#facts-container,
 #quotes-container {
     display: flex;
     flex-direction: column;
+    gap: 35px;
     margin-top: 20px;
 }
 
-#quotes-container blockquote {
-    background: #fff;
-    padding: 20px;
-    border-left: 4px solid #222;
-    border-radius: 10px;
-    line-height: 1.6;
-    font-style: italic;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+/* Карточки фактов */
+
+.fact-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#quotes-container blockquote {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #222;
+.fact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.1);
 }
+
+.fact-card p {
+    font-size: 17px;
+    color: #555;
+}
+
+
+/* Карточки цитат */
+
+.quote-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 45px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.06);
+    border-left: 6px solid #111;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.1);
+}
+
+.quote-card p {
+    font-size: 19px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Блок с фото и текстом */
+
+.info-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.image-person-container {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 18px;
+    flex-shrink: 0;
+}
+
+.image-person-container img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+/* по умолчанию взрослое скрыто */
+.image-person-container .adult {
+    opacity: 0;
+}
+
+
+/* Анимация появления */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Кнопка назад */
 
 .back-button {
     display: inline-block;
-    margin-top: 50px;
-    padding: 12px 20px;
-    background: #222;
+    padding: 16px 34px;
+    background: #111;
     color: #fff;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 14px;
+    font-weight: 500;
+    transition: transform 0.2s ease;
 }
 
 .back-button:hover {
-    background: #444;
+    background: #333;
+    transform: translateY(-2px);
 }
 
-@media (max-width: 900px) {
-    .person-container {
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.back-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.back-icon path {
+    stroke: none;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 16px;
+    }
+    
+    .title-content h1 {
+        font-size: 48px;
+    }
+
+    .title-content p {
+        font-size: 18px;
+    }
+
+    .info-flex {
+        gap: 20px;
         flex-direction: column;
+        align-items: center;
     }
 
-    .person-container .image-container {
-        width: 100%;
-        padding-top: 100%;
-        flex: none;
+    .info-card {
+        padding: 35px;
     }
 
-    header h1 {
-        font-size: 30px;
+    .facts-card {
+        padding: 35px;
     }
 
-    .person-text p,
-    .person-text li {
+    .quotes-card {
+        padding: 35px;
+    }
+
+    .fact-card {
+        padding: 25px;
+    }
+
+    .quote-card {
+        padding: 25px;
+    }
+
+    main h2 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .image-person-container {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .title-content h1 {
+        font-size: 36px;
+    }
+    .title-content p {
         font-size: 16px;
     }
 }
-

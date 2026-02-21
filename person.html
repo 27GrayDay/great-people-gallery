@@ -2,52 +2,55 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Персона</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-    <h1 id="person-name"></h1>
-</header>
-
 <main>
 
-    <div class="person-container">
+    <!-- Блок с фото и исторической справкой -->
+    <section class="info-card">
+        <div class="info-flex">
 
-        <!-- Фото -->
-        <div class="image-container">
-            <img id="person-child" class="child">
-            <img id="person-adult" class="adult">
-        </div>
+            <div class="image-person-container">
+                <img id="person-child" class="child">
+                <img id="person-adult" class="adult">
+            </div>
 
-        <!-- Текст -->
-        <div class="person-text">
-
-            <section>
+            <div class="historical-text">
                 <h2>Историческая справка</h2>
                 <p id="historical-info"></p>
-            </section>
-
-            <section>
-                <h2>Факты о жизни и творчестве</h2>
-                <ul id="facts-list"></ul>
-            </section>
+            </div>
 
         </div>
-    </div>
+    </section>
+
+
+    <!-- Факты -->
+    <section class="facts-card reveal">
+        <h2>Факты о жизни и творчестве</h2>
+        <div id="facts-container"></div>
+    </section>
+
 
     <!-- Цитаты -->
-    <section>
+    <section class="quotes-card reveal">
         <h2>Цитаты</h2>
         <div id="quotes-container"></div>
     </section>
 
-    <a href="index.html" class="back-button">◀ Назад на главную</a>
+    <a href="index.html" class="back-button">
+    <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 5 L7 12 L15 19 Z"></path>
+    </svg>
+    Назад на главную
+</a>
 
 </main>
 
-<script src="js/script.js"></script>
+<script src="js/person.js"></script>
 
 </body>
 </html>
