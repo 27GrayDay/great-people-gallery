@@ -109,7 +109,7 @@ function initRevealObserver() {
             entry.target.classList.toggle("active", entry.isIntersecting);
         });
     }, {
-        threshold: 0.10
+        threshold: 0.15
     });
 
     elements.forEach(el => observer.observe(el));

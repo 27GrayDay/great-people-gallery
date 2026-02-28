@@ -313,6 +313,9 @@ main {
 }
 
 @media (max-width: 768px) {
+    main {
+        padding: 0 5px;
+    }
     p {
         font-size: 16px;
     }
@@ -332,15 +335,15 @@ main {
     }
 
     .info-card {
-        padding: 35px;
+        padding: 25px;
     }
 
     .facts-card {
-        padding: 35px;
+        padding: 25px;
     }
 
     .quotes-card {
-        padding: 35px;
+        padding: 25px;
     }
 
     .fact-card {

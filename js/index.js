@@ -91,7 +91,7 @@ function initObserver() {
     entries.forEach(entry => {
       entry.target.classList.toggle('show', entry.isIntersecting);
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.2 });
 
   cards.forEach(card => observer.observe(card));
 }
