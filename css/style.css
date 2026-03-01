@@ -87,6 +87,10 @@ p {
 }
 
 .image-container {
+    -webkit-touch-callout: none; /* iOS */
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
     position: relative;
     width: 100%;
     aspect-ratio: 4/5;
@@ -95,6 +99,7 @@ p {
 }
 
 .image-container img {
+    pointer-events: none;
     position: absolute;
     inset: 0;
     width: 100%;
@@ -234,6 +239,10 @@ main {
 }
 
 .image-person-container {
+    -webkit-touch-callout: none; /* iOS */
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
     position: relative;
     width: 100%;
     max-width: 360px;
@@ -244,6 +253,7 @@ main {
 }
 
 .image-person-container img {
+    pointer-events: none;
     position: absolute;
     inset: 0;
     width: 100%;

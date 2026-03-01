@@ -89,9 +89,11 @@ function initObserver() {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      entry.target.classList.toggle('show', entry.isIntersecting);
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
   cards.forEach(card => observer.observe(card));
 }
