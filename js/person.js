@@ -103,14 +103,26 @@ function createCard(className, text) {
 
 function initRevealObserver() {
     const elements = document.querySelectorAll(".reveal");
+    const enterThreshold = 0.15; // показываем, когда элемент виден ≥15%
+    const leaveThreshold = 0.05; // скрываем, когда элемент виден <5%
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");    
+            if (entry.intersectionRatio >= enterThreshold) {
+                // показываем сразу
+                entry.target.classList.add("active");
+                if (entry.target.hideTimeout) {
+                    clearTimeout(entry.target.hideTimeout);
+                    entry.target.hideTimeout = null;
+                }
+            } else if (entry.intersectionRatio < leaveThreshold) {
+                // скрываем с небольшой задержкой
+                entry.target.hideTimeout = setTimeout(() => {
+                    entry.target.classList.remove("active");
+                }, 150); // задержка для плавности
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: Array.from({length: 101}, (_, i) => i / 100) });
 
     elements.forEach(el => observer.observe(el));
 }

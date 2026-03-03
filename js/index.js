@@ -86,14 +86,27 @@ function initRevealAndAdult(grid) {
 
 function initObserver() {
   const cards = document.querySelectorAll('.card');
+  const enterThreshold = 0.2; // показываем, когда карточка видна ≥20%
+  const leaveThreshold = 0.05; // скрываем, когда карточка видна <5%
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.intersectionRatio >= enterThreshold) {
+        // показываем сразу
         entry.target.classList.add('show');
+        // отменяем таймаут на скрытие
+        if (entry.target.hideTimeout) {
+          clearTimeout(entry.target.hideTimeout);
+          entry.target.hideTimeout = null;
+        }
+      } else if (entry.intersectionRatio < leaveThreshold) {
+        // скрываем с небольшой задержкой
+        entry.target.hideTimeout = setTimeout(() => {
+          entry.target.classList.remove('show');
+        }, 150); // можно подстроить задержку под плавность
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: Array.from({length: 101}, (_, i) => i / 100), rootMargin: '0px 0px -50px 0px' });
 
   cards.forEach(card => observer.observe(card));
 }
